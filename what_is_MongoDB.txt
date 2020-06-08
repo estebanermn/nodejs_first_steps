@@ -1,0 +1,88 @@
+What is Mongo
+
+datos almacenados en diferentes documentos
+
+sistema de bd no relacional orientado a doc de codigo abierto
+
+
+JSON - BSON
+
+
+db.version() // muestra version
+
+db // debe utilizando
+
+show dbs // muestra dbs
+show collections // muestra colecciones	
+
+
+
+use udemyDb // crea y cambia a db
+db.createCollection("coleccion") // crea colección
+db.coleccion.insert()
+
+
+db.profesor.insert({
+	"nombre": "Alberto",
+	"cursos": 4,
+	"pais": null,
+	"lenguajes":["Java", "Kotlin", "Swift"],
+	"direccion": {
+		"calle":"Mi calle",
+		"numero":3
+		}
+})
+
+
+db.curso.insertMany(
+[
+{
+ "nombre":"Curso MongoDb",
+ "duracion":300,
+ "estudiantes":1000,
+ "fecha":"2020"
+},
+{
+ "nombre":"Curso Node.js",
+ "duracion":300,
+ "estudiantes":1000,
+ "fecha":"2020"
+},
+{
+ "nombre":"Curso Kotlin",
+ "duracion":300,
+ "estudiantes":1000,
+ "fecha":null
+}
+]
+)
+
+db.collection.drop() // borrar collection
+db.getCollection("collection").drop // borrar collection
+db.dropDatabase() 
+
+
+db.collection.remove({}) // limpiar collection
+
+db.collection.find() // mostrar collection
+
+
+
+
+ db.profesor.find()
+{ "_id" : ObjectId("5ebe01146b53c52627c384ee"), "Double" : 10, "String" : "Alberto", "Boolean" : true, "Date" : ISODate("2020-05-15T02:40:20.266Z"), "Null" : null, "NumberInt" : 100, "NumberLong" : NumberLong(123356789), "object" : { "Double" : 12, "String" : "Alberto" }, "array" : [ 1, 2, 3 ] }
+
+//getAll
+db.profesor.find().count()
+
+
+db.profesor.find({"favoriteFruit":"banana"}).count()
+
+
+db.profesro.find({"favoriteFruit:"banana", "age":31}).count()
+
+
+https://mockingbot.com/app/design/pka49337ayvuso2j8#screen=ska4933ygvsmagoqn
+
+https://dbdiagram.io/d/5ebb50b439d18f5553ff1c74
+https://dbdiagram.io/d/5ebd7f3b39d18f5553ff370d

@@ -1,0 +1,31 @@
+npm init -y
+
+npm i typescript
+
+npx tsc --init
+
+npx tsc
+
+npm i concurrently -D // permite ejecutar dos comandos a la vez
+
+npm i nodemon -D
+
+npm i @types/express -D
+
+
+npm i morgan
+
+npm i @types/morgan
+
+
+npm i mongoose
+
+npm i jsonwebtoken 
+
+npm i @types/jsonwebtoken -D
+
+npm i dotenv 
+
+npm i bcryptjs //encrypt password
+
+

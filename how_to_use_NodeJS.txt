@@ -1,0 +1,34 @@
+Node js orientado a eventos, 
+metodos async  a eventos
+
+npm admistrado de paquetes node, gestor de paquetes , acceso a modulos.
+
+//create package json
+npm init 
+
+//baja las dependencias del package.json
+npm install
+
+// ejecuta iniciando la aplicacion
+npm start
+
+
+*use express
+
+npm install express
+
+*use nodemon
+
+npm install -g nodemon
+
+npm install morgan
+
+*middelware : bloque de codigo entre request hasta que llega al servidor y el response al cliente.
+
+promesa : pending , resolve(ok) - reject(error)
+
+
+
+
+
+Las93866

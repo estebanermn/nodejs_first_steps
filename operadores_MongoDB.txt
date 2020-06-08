@@ -1,0 +1,56 @@
+
+
+//igual a
+db.persona.find({"age":{"$eq":27}}).count() 
+
+//no igual a
+db.persona.find({"age":{"$ne":27}}).count()   
+
+//mayor que 
+db.persona.find({"age":{"$gt":27}}).count()
+
+//menor que
+db.persona.find({"age":{"$lt":27}}).count()  
+
+//mayor o igual que 
+db.persona.find({"age":{"$gte":27}}).count()
+
+//menor o igual que 
+db.persona.find({"age":{"$lte":27}}).count()
+
+//mayor a y menor a 
+ db.persona.find({"age":{"$gt":30, "$lt":35}}).count()
+
+
+//buscar dentro de un objecto
+db.persona.find({"name.last":{"$gte": "W"}}).count()
+
+
+
+//filtrar desde un array trayendo los valores iguales
+ db.persona.find({"name.first": {"$in":["Geneva","Pamela"]}}).count()
+ db.persona.find({"eyeColor":{$in:["green","blue"]}}).count()
+
+
+
+//filtrar desde un array trayendo los valores diferente
+ db.persona.find({"name.first": {"$nin":["Geneva","Pamela"]}}).count()
+ db.persona.find({"eyeColor":{$nin:["green","blue"]}}).count()
+
+//operador $and
+ db.persona.find({$and: [{"age":{"$ne":33}},{"age":{"$gte":18}}]}).count()
+db.persona.find({$and: [{"eyeColor":"green"},{"age":{$gte:33}}]}).count()
+
+//operador $or
+db.persona.find({$or: [{"eyeColor":"brown"}, {"name.first":"Geneva"}]}).count()
+
+
+//busqueda por obj completo
+db.persona.find({"name":{"first":"Geneva", "last":"Ramsey"}}).count() 
+
+
+busqueda por array completo
+ db.persona.find({"tags":["mollit", "esse", "culpa", "ex", "irure"]}).count()
+ 
+ db.persona.find({"tags":"mollit"}).count()
+ db.persona.find({"tags.0":"mollit"}).count()
